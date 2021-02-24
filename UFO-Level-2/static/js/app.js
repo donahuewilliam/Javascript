@@ -11,9 +11,6 @@ var inputCity = d3.select("city");
 
 var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
 
-
-
-
 //  HTML setup
 var addData = (dataInput) => {
     dataInput.forEach(ufoSightings => {
@@ -25,7 +22,6 @@ var addData = (dataInput) => {
 
 addData(tableData);
 
-
 button.on("click", () => {
 
    
@@ -34,13 +30,11 @@ button.on("click", () => {
     var Dates = inputDate.property("value").trim();
     
     var City = inputCity.property("value").toLowerCase().trim();
-    
 
     var filteredDate = tableData.filter(tableData => tableData.datetime === Dates);
 
     var filteredCity = tableData.filter(tableData => tableData.city === City);
     
-
     var filteredData = tableData.filter(tableData => tableData.datetime === Dates && tableData.city === City);
     
     $tbody.html("");
@@ -55,7 +49,6 @@ button.on("click", () => {
         addData(filteredData);
     }
 
-    
         else if(response.filteredData.length === 0 && ((response.filteredDate.length !== 0 || response.filteredCity.length !== 0))) {
             addData(filteredDate) || addData(filteredCity);
         }
