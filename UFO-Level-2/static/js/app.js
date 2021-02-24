@@ -29,7 +29,7 @@ addData(tableData);
 button.on("click", () => {
 
    
-    
+// set up tables    
 
     var Dates = inputDate.property("value").trim();
     
@@ -49,6 +49,7 @@ button.on("click", () => {
         filteredDate, filteredCity, filteredData
     }
 
+    // set up conditions 
     
     if(response.filteredData.length !== 0) {
         addData(filteredData);
