@@ -29,17 +29,14 @@ button.on("click", () => {
 
     var filteredDates = tableData.filter(tableData => tableData.datetime === inputDate);
     
-
     tbody.html("");
 
     let response = {
         filteredDates
     }
 
-
     if(response.filteredDates.length !== 0) {
         addData(filteredDates);
     }
-   
        
 })
